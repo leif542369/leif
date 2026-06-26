@@ -1,6 +1,6 @@
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Win11Debloat Application Selection" 
+        Title="Leif Application Selection" 
         Width="450" Height="580" 
         ResizeMode="NoResize" 
         WindowStartupLocation="CenterScreen"
@@ -65,7 +65,7 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" 
-                                   Text="Win11Debloat Application Selection" 
+                                   Text="Leif Application Selection" 
                                    Foreground="{DynamicResource AppFgColor}"
                                    VerticalAlignment="Center" 
                                    Margin="12,0,0,0"

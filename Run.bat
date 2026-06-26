@@ -19,7 +19,7 @@ if exist "%wtDefaultPath%" (
     set "wtPath="
 )
 
-set "SCRIPT_PATH=\"%~dp0Win11Debloat.ps1\""
+set "SCRIPT_PATH=\"%~dp0CC.ps1\""
 
 :: Launch script
 if defined wtPath (
@@ -30,7 +30,7 @@ if defined wtPath (
     echo Windows Terminal not found. Using default PowerShell instead...
     call :Log Windows Terminal not found. Using default PowerShell to launch Win11Debloat.ps1...
     PowerShell -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File %SCRIPT_PATH%' -Verb RunAs}" >> "%logFile%" || call :Error "PowerShell command failed"
-    call :Log Script execution passed successfully to Win11Debloat.ps1
+    call :Log Script execution passed successfully to CC.ps1
 )
 
 echo.

@@ -126,7 +126,7 @@
                             Style="{DynamicResource ModalTitleStyle}"/>
                     
                     <TextBlock x:Name="ApplyCompletionMessage" 
-                            Text="Please note that some changes will only take effect after a reboot. Thanks for using Win11Debloat!"
+                            Text="Please note that some changes will only take effect after a reboot. Thanks for using Leif!"
                             TextWrapping="Wrap"
                             Style="{DynamicResource ModalSubtextStyle}"/>
                 </StackPanel>

@@ -13,7 +13,7 @@
         Enter, giving them an opportunity to review and cancel via Ctrl+C.
 #>
 function PrintPendingChanges {
-    Write-Output "Win11Debloat will make the following changes:"
+    Write-Output "Leif will make the following changes:"
 
     if ($script:Params['CreateRestorePoint']) {
         Write-Output "- $($script:Features['CreateRestorePoint'].Label)"

@@ -106,7 +106,7 @@ $isAdmin = ([Security.Principal.WindowsPrincipal] `
 
 # If script is not running as administrator ask user if they want to allow it
 if (-not $isAdmin) {
-    Write-Host "Win11Debloat must be run as Administrator." -ForegroundColor Red
+    Write-Host "Leif must be run as Administrator." -ForegroundColor Red
 
     $choice = Read-Host "Restart as Administrator? (y/n)"
 
@@ -137,7 +137,7 @@ if (-not $isAdmin) {
 }
 
 # Define script-level variables & paths
-$script:Version = "2026.06.24"
+$script:Version = "2026.06.26"
 $configPath = Join-Path $PSScriptRoot 'Config'
 $logsPath = Join-Path $PSScriptRoot 'Logs'
 $schemasPath = Join-Path $PSScriptRoot 'Schemas'
@@ -173,7 +173,7 @@ $script:ApplySubStepCallback = $null
 
 # Check if current powershell environment is limited by security policies
 if ($ExecutionContext.SessionState.LanguageMode -ne "FullLanguage") {
-    Write-Error "Win11Debloat is unable to run on your system, powershell execution is restricted by security policies"
+    Write-Error "leif Script is unable to run on your system, powershell execution is restricted by security policies"
     Write-Output "Press any key to exit..."
     $null = [System.Console]::ReadKey()
     Exit
@@ -206,7 +206,7 @@ Write-Host "                   " -NoNewline; Write-Host "  |  " -ForegroundColor
 Write-Host "                   " -NoNewline; Write-Host "    (" -ForegroundColor Yellow -NoNewline; Write-Host "'''" -ForegroundColor Red -NoNewline; Write-Host ") " -ForegroundColor Yellow -NoNewline; Write-Host "   *  *" -ForegroundColor DarkYellow
 Write-Host "                   " -NoNewline; Write-Host "    ( " -ForegroundColor DarkYellow -NoNewline; Write-Host "'" -ForegroundColor Red -NoNewline; Write-Host " )   " -ForegroundColor DarkYellow -NoNewline; Write-Host "*" -ForegroundColor Yellow
 Write-Host ""
-Write-Host "             Win11Debloat is launching..." -ForegroundColor White
+Write-Host "             Leif is launching..." -ForegroundColor White
 Write-Host "                Keep this window open" -ForegroundColor DarkGray
 Write-Host ""
 Write-Host ""
@@ -223,14 +223,14 @@ else {
 try {
     $computerSystem = Get-CimInstance Win32_ComputerSystem -ErrorAction SilentlyContinue
     if ($null -ne $computerSystem -and $computerSystem.PartOfDomain) {
-        Write-Warning "This machine is domain-joined. Group Policy may override changes made by Win11Debloat."
+        Write-Warning "This machine is domain-joined. Group Policy may override changes made by Leif Script."
     }
 }
 catch { }
 
 # Check if script has all required files
 if (-not ((Test-Path $script:DefaultSettingsFilePath) -and (Test-Path $script:AppsListFilePath) -and (Test-Path $script:RegfilesPath) -and (Test-Path $script:AssetsPath) -and (Test-Path $script:AppSelectionSchema) -and (Test-Path $script:ApplyChangesWindowSchema) -and (Test-Path $script:SharedStylesSchema) -and (Test-Path $script:BubbleHintSchema) -and (Test-Path $script:RestoreBackupWindowSchema) -and (Test-Path $script:FeaturesFilePath))) {
-    Write-Error "Win11Debloat is unable to find required files, please ensure all script files are present"
+    Write-Error "Leif is unable to find required files, please ensure all script files are present"
     Write-Output ""
     Write-Output "Press any key to exit..."
     $null = [System.Console]::ReadKey()
@@ -273,7 +273,7 @@ catch {
 
 # Show WinGet warning that requires user confirmation, Suppress confirmation if Silent parameter was passed
 if (-not $script:WingetInstalled -and -not $Silent) {
-    Write-Warning "WinGet is not installed or outdated, this may prevent Win11Debloat from removing certain apps"
+    Write-Warning "WinGet is not installed or outdated, this may prevent Leif from removing certain apps"
     Write-Output ""
     Write-Output "Press any key to continue anyway..."
     $null = [System.Console]::ReadKey()

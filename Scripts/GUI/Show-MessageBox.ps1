@@ -5,7 +5,7 @@ function Show-MessageBox {
         [string]$Message,
         
         [Parameter(Mandatory=$false)]
-        [string]$Title = "Win11Debloat",
+        [string]$Title = "Leif",
         
         [Parameter(Mandatory=$false)]
         [ValidateSet('OK', 'OKCancel', 'YesNo')]

@@ -22,7 +22,7 @@
 
             <!-- Title Bar -->
             <Grid Grid.Row="0" x:Name="TitleBar" Style="{DynamicResource ModalTitleBarStyle}">
-                <TextBlock Text="About Win11Debloat" 
+                <TextBlock Text="About Leif" 
                            Style="{DynamicResource ModalTitleTextStyle}"/>
             </Grid>
 
@@ -85,7 +85,7 @@
                 <!-- Content -->
                 <StackPanel Grid.Row="2" Margin="20,16,20,16">
                     <!-- Donation Message -->
-                    <TextBlock Text="Win11Debloat is a passion project that I maintain in my free time. If you've found this tool useful, please consider making a small donation to support its development. I really appreciate it!"
+                    <TextBlock Text="Leif is a passion project that I maintain in my free time. If you've found this tool useful, please consider making a small donation to support its development. I really appreciate it!"
                             FontSize="14"
                             Foreground="{DynamicResource AppFgColor}"
                             TextWrapping="Wrap"
